@@ -22,7 +22,7 @@ func main() {
 
 	err = os.WriteFile(os.Args[2], []byte(result), 0644) // on prend se quil y a dans content et on print dans args2 ( result.txt ) et 0644 permission de base par default
 	// pareil en haut Write attend des bytes pas du text donc on reconvertis en bytes le text convertis au dessus
-	if err != nil {                               // si cela fais une err alors on print
+	if err != nil { // si cela fais une err alors on print
 		fmt.Println("Erreur:", err) // print err
 		os.Exit(1)                  // on sort on stop
 	}

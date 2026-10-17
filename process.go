@@ -46,6 +46,6 @@ func ProcessText(text string) string { // crée la func qui va modifier le text 
 			result = append(result, words[i]) // on ajoute le mot a la fin de result les marqueurs on les ajoute jamais donc ils disparaissent
 		}
 	}
-
+	result = FixPunctuation(result)
 	return strings.Join(result, " ") // on recolle tous les mots de result avec un espace entre et on renvoie le text final a main
 }

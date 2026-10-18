@@ -47,6 +47,7 @@ func ProcessText(text string) string { // crée la func qui va modifier le text 
 		}
 	}
 	result = FixPunctuation(result)
+	result = FixApostrophe(result)
 	result = FixArticle(result)
 	return strings.Join(result, " ") // on recolle tous les mots de result avec un espace entre et on renvoie le text final a main
 }

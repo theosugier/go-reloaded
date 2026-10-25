@@ -27,8 +27,11 @@ func ProcessText(text string) string {
 		} else if words[i] == "(cap)" {
 			mot := result[len(result)-1]
 			result[len(result)-1] = strings.ToUpper(mot[:1]) + strings.ToLower(mot[1:]) // premiere lettre en maj le reste en min
-		} else if words[i] == "(up," {
+		} else if words[i] == "(up," && i+1 < len(words) { // verif ya bien un mot apers up
 			n, _ := strconv.Atoi(strings.TrimSuffix(words[i+1], ")")) // je recup le nombre dans le mot dapres genre 2)
+			if n > len(result) {
+				n = len(result) // empeche plant si nombre trop grand
+			}
 			for j := 1; j <= n; j++ {
 				result[len(result)-j] = strings.ToUpper(result[len(result)-j])
 			}

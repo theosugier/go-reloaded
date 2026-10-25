@@ -11,8 +11,10 @@ func ProcessText(text string) string {
 
 	for i := 0; i < len(words); i++ {
 		if words[i] == "(hex)" {
-			nombre, _ := strconv.ParseInt(result[len(result)-1], 16, 64) // je lis le mot davant en hexa
-			result[len(result)-1] = strconv.FormatInt(nombre, 10)
+			nombre, err := strconv.ParseInt(result[len(result)-1], 16, 64) // je lis le mot davant en hexa
+			if err == nil {
+				result[len(result)-1] = strconv.FormatInt(nombre, 10)
+			} // si le mot davant cest pas de lhexa je le laisse sinon il devient 0
 		} else if words[i] == "(bin)" {
 			nombre, _ := strconv.ParseInt(result[len(result)-1], 2, 64)
 			result[len(result)-1] = strconv.FormatInt(nombre, 10)

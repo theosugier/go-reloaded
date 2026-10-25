@@ -7,7 +7,7 @@ import (
 
 func ProcessText(text string) string {
 	result := []string{}
-	words := strings.Split(text, " ") // je coupe le text en mots
+	words := strings.Fields(text) // je coupe le text en mots / modif strings.Fields pour gérer si il y a plsueiurs espace et on retire argu il prend que 1 argu
 
 	for i := 0; i < len(words); i++ {
 		if words[i] == "(hex)" {

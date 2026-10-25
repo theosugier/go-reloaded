@@ -36,14 +36,20 @@ func ProcessText(text string) string {
 				result[len(result)-j] = strings.ToUpper(result[len(result)-j])
 			}
 			i++ // je saute le 2) vu que je lai deja utilise
-		} else if words[i] == "(low," {
+		} else if words[i] == "(low," && i+1 < len(words) {
 			n, _ := strconv.Atoi(strings.TrimSuffix(words[i+1], ")"))
+			if n > len(result) {
+				n = len(result) // empeche plant si nombre trop grand
+			}
 			for j := 1; j <= n; j++ {
 				result[len(result)-j] = strings.ToLower(result[len(result)-j])
 			}
 			i++
-		} else if words[i] == "(cap," {
+		} else if words[i] == "(cap," && i+1 < len(words) {
 			n, _ := strconv.Atoi(strings.TrimSuffix(words[i+1], ")"))
+			if n > len(result) {
+				n = len(result) // empeche plant si nombre trop grand
+			}
 			for j := 1; j <= n; j++ {
 				mot := result[len(result)-j]
 				result[len(result)-j] = strings.ToUpper(mot[:1]) + strings.ToLower(mot[1:])

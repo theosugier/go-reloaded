@@ -1,1 +1,1 @@
-bonjour (hex) 1E (hex)
+this is so exciting (up, 2) hi (low, 10)

@@ -40,4 +40,20 @@ func TestProcessText(t *testing.T) {
 	if result != "An amazing rock" {
 		t.Errorf("erreur article")
 	}
+	result = ProcessText("(up) hello")
+	if result != "(up) hello" {
+		t.Errorf("erreur debut")
+	}
+	result = ProcessText("hi (up, 5)")
+	if result != "HI" {
+		t.Errorf("erreur nombre trop grand")
+	}
+	result = ProcessText("bonjour (hex)")
+	if result != "bonjour" {
+		t.Errorf("erreur hex faux")
+	}
+	result = ProcessText("hello  world")
+	if result != "hello world" {
+		t.Errorf("erreur espaces")
+	}
 }

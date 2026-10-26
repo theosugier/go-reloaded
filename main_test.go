@@ -28,4 +28,16 @@ func TestProcessText(t *testing.T) {
 	if result != "this is SO EXCITING" {
 		t.Errorf("erreur up 2")
 	}
+	result = ProcessText("there ,and then BAMM !!")
+	if result != "there, and then BAMM!!" {
+		t.Errorf("erreur ponctuation")
+	}
+	result = ProcessText("me: ' awesome '")
+	if result != "me: 'awesome'" {
+		t.Errorf("erreur apostrophe")
+	}
+	result = ProcessText("A amazing rock")
+	if result != "An amazing rock" {
+		t.Errorf("erreur article")
+	}
 }

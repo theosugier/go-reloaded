@@ -4,6 +4,13 @@ Projet Ynov B1 en Go.
 
 Le programme lit un fichier texte, le corrige et ecrit le resultat dans un autre fichier.
 
+Installer : 
+
+Il faut avoir Go installe (https://go.dev/dl/).
+
+git clone https://github.com/theosugier/go-reloaded.git
+cd go-reloaded
+
 Lancer : 
 
 go run . sample.txt result.txt

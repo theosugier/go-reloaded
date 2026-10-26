@@ -16,4 +16,16 @@ func TestProcessText(t *testing.T) {
 	if result != "GO" {
 		t.Errorf("erreur up")
 	}
+	result = ProcessText("HELLO (low)")
+	if result != "hello" {
+		t.Errorf("erreur low")
+	}
+	result = ProcessText("bRIDGE (cap)")
+	if result != "Bridge" {
+		t.Errorf("erreur cap")
+	}
+	result = ProcessText("this is so exciting (up, 2)")
+	if result != "this is SO EXCITING" {
+		t.Errorf("erreur up 2")
+	}
 }

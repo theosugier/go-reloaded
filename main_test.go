@@ -13,7 +13,7 @@ func TestProcessText(t *testing.T) {
 		t.Errorf("erreur bin")
 	}
 	result = ProcessText("go (up)")
-	if result != "2" {
+	if result != "GO" {
 		t.Errorf("erreur up")
 	}
 }
